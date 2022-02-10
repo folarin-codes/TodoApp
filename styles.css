@@ -11,7 +11,7 @@ body:not(header) {
   background-color: hsl(0, 0%, 98%);
 }
 header {
-  background-image: url(./todo-app-main/images/bg-desktop-light.jpg);
+  background-image: url(./images/bg-desktop-light.jpg);
   height: 45vh;
   background-position: center;
   background-size: cover;
