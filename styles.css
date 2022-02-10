@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Lato:wght@100;300;400&family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", Verdana, Geneva, Tahoma, sans-serif;
+}
+body:not(header) {
+  background-color: hsl(0, 0%, 98%);
+}
+header {
+  background-image: url(./todo-app-main/images/bg-desktop-light.jpg);
+  height: 45vh;
+  background-position: center;
+  background-size: cover;
+}
+.header-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4em 1em;
+}
+.header-div h2 {
+  color: white;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+}
+.img {
+  cursor: pointer;
+}
+.input {
+  display: flex;
+  margin: 0 auto;
+  height: 3em;
+  width: 90vw;
+  border-radius: 5px;
+  padding: 0.3em 1.5em;
+  border-color: transparent;
+}
+.input::placeholder {
+  color: hsl(234, 39%, 85%);
+}
+.todo-section {
+  display: flex;
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+  border-bottom: 1px solid hsl(0, 4%, 90%);
+  background-color: white;
+  font-size: 18px;
+  padding: 1em 0.5em;
+}
+input {
+  margin: 0 1em;
+  width: 1em;
+  height: 1em;
+  font-size: 18px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1em 0;
+  width: 90vw;
+  position: relative;
+  margin: 0 5vw;
+  margin-top: calc(-10vh + -0.2em);
+  box-shadow: 0px 6px 4px -4px #00000026;
+}
+.todo-container input {
+  visibility: hidden;
+}
+
+.div-span {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding: 0 1em;
+}
+.todo-container span {
+  color: hsl(0deg 4% 76%);
+}
+.todo-container .check-box {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  left: 2em;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  margin-top: 3px;
+}
+.footer-div {
+  display: flex;
+  color: hsl(236, 9%, 61%);
+  justify-content: space-around;
+  padding: 1em;
+  width: 90vw;
+  height: 3em;
+  margin: 1.5em auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 6px 4px -4px #00000026;
+}
+
+.dark-mode {
+  background-color: hsl(237, 14%, 26%);
+  color: hsl(234, 39%, 85%);
+}
+.footer-div :nth-child(1) {
+  color: hsl(220, 98%, 61%);
+}
+h3 {
+  margin-top: 2em;
+  text-align: center;
+  color: hsl(236, 9%, 61%);
+  padding-bottom: 3em;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  */
+
+@media (min-width: 768px) {
+  .header-div {
+    margin: 0 25vw;
+  }
+  .input {
+    width: 50vw;
+    padding-left: 2em;
+  }
+  .todo-container {
+    width: 50vw;
+    margin: -3em 25vw;
+  }
+  .footer-div {
+    width: 50vw;
+    margin-top: 5em;
+  }
+}
