@@ -137,6 +137,7 @@ init = () => {
             if (event.keyCode == 13 || event.which == 13) {
 
                   if (elements.input.value != '') {
+
                         state.todo.storeTodo(state.todo)
                         state.todo.addTodoToLocalStorage()
                         state.todo.parseTodo()
