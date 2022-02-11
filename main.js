@@ -26,7 +26,6 @@ let todoArr = [];
 let parsedTodoArr = [];
 
 
-
 let state = {}
 
 //DARK MODE IMPLEMENTATION
@@ -104,10 +103,7 @@ class Todo {
 
 }
 
-parsedTodoArr = todoArr
 parsedTodoArr = JSON.parse(localStorage.getItem("myTodos"))
-
-
 
 renderOnRefresh = function () {
 
@@ -123,6 +119,10 @@ renderOnRefresh = function () {
             elements.todoContainer.insertAdjacentHTML("beforeend", todoItem);
             
       })
+
+            if (todoArr ) {
+      todoArr = parsedTodoArr
+}
 
 } 
 
@@ -155,5 +155,4 @@ init = () => {
       renderOnRefresh()
 }
 
-
-init()
+ init()
