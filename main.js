@@ -29,6 +29,8 @@ let parsedTodoArr = [];
 
 let state = {}
 
+// todo panel
+
 /*
 
 if (todoArr != []) {
