@@ -152,7 +152,12 @@ init = () => {
       
       })
 
-      renderOnRefresh()
+      if (todoArr != []) {
+        renderOnRefresh()
+            
+      }
+
+   
 }
 
  init()
