@@ -74,6 +74,9 @@ input {
 .todo-container input {
   visibility: hidden;
 }
+.todo-container input[type="radio"] :checked {
+  visibility: visible;
+}
 
 .div-span {
   display: flex;
@@ -93,6 +96,12 @@ input {
   display: inline-block;
   position: absolute;
   margin-top: 3px;
+}
+
+.todo-container li img {
+  position: absolute;
+  left: calc(30vw + 9em);
+  cursor: pointer;
 }
 .footer-div {
   display: flex;

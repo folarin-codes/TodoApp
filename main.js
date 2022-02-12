@@ -19,7 +19,8 @@ elements = {
       todoContainer: document.querySelector('.todo-container'),
       todoItems: document.querySelectorAll("li"),
       body: document.querySelector("body"),
-      footer: document.querySelector('.footer-div')
+      footer: document.querySelector('.footer-div'),
+      infoBlock : document.querySelector(".div-span")
 }
 
 let todoArr = [];
@@ -27,6 +28,20 @@ let parsedTodoArr = [];
 
 
 let state = {}
+
+/*
+
+if (todoArr != []) {
+      elements.infoBlock.style.visibility = 'visible'
+
+}
+else {
+      
+      elements.infoBlock.style.visibility = 'hidden'
+      
+}
+*/
+
 
 //DARK MODE IMPLEMENTATION
 elements.img.addEventListener('click', function () {
@@ -84,7 +99,7 @@ class Todo {
 
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${value}</li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${value}<img src="images/icon-cross.svg" alt="" srcset=""></li>
             
             
             `
@@ -92,14 +107,6 @@ class Todo {
 
       }
 
-      renderOnRefresh() {
-
-            parsedTodoArr.forEach((e) => {
-
-            state.todo.renderTodoToDom(e.value)
-            
-      })
-      }
 
 }
 
@@ -112,13 +119,14 @@ renderOnRefresh = function () {
             
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${e.value}</li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${e.value}<img src="images/icon-cross.svg" alt="" srcset=""></li>
             
             
             `
             elements.todoContainer.insertAdjacentHTML("beforeend", todoItem);
             
       })
+            
 
             if (todoArr ) {
       todoArr = parsedTodoArr
@@ -128,8 +136,6 @@ renderOnRefresh = function () {
 
 init = () => {
       
-      // state.todo = new Todo(elements.input.value)
-
       document.addEventListener("keypress", event => {
     
       
@@ -152,7 +158,13 @@ init = () => {
       
       })
 
-      renderOnRefresh()
+
+      if (parsedTodoArr != []) {
+            renderOnRefresh()
+            
+      }
+
+      
 }
 
- init()
+init()
