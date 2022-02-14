@@ -127,7 +127,9 @@ renderOnRefresh = function () {
 }
 
 elements.todoContainer.addEventListener("click", (e) => {
-      console.log(e.target)
+      let event = e.target;
+      console.log(event)
+
 })
 
 init = () => {
