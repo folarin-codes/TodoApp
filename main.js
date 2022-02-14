@@ -84,7 +84,7 @@ class Todo {
 
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${value}</li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${value} <img src="images/icon-cross.svg"</li>
             
             
             `
@@ -112,7 +112,7 @@ renderOnRefresh = function () {
             
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${e.value}</li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${e.value} <img src="images/icon-cross.svg" </li>
             
             
             `
@@ -124,7 +124,11 @@ renderOnRefresh = function () {
       todoArr = parsedTodoArr
 }
 
-} 
+}
+
+elements.todoContainer.addEventListener("click", (e) => {
+      console.log(e.target)
+})
 
 init = () => {
       
