@@ -74,7 +74,11 @@ input {
 .todo-container input {
   visibility: hidden;
 }
-
+.todo-container li img {
+  position: absolute;
+  left: calc(30vw + 9em);
+  cursor: pointer;
+}
 .div-span {
   display: flex;
   justify-content: space-between;
