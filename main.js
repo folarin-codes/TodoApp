@@ -92,15 +92,6 @@ class Todo {
 
       }
 
-      renderOnRefresh() {
-
-            parsedTodoArr.forEach((e) => {
-
-            state.todo.renderTodoToDom(e.value)
-            
-      })
-      }
-
 }
 
 parsedTodoArr = JSON.parse(localStorage.getItem("myTodos"))
@@ -120,34 +111,35 @@ renderOnRefresh = function () {
             
       })
 
-            if (todoArr ) {
+            if (todoArr) {
       todoArr = parsedTodoArr
 }
 
 }
 
-elements.todoContainer.addEventListener("click", (e) => {
-      var event = e.target.closest(".remove").parentNode
-      // console.log( event.textContent)
+removeTodoFromDOM = () => {
+      elements.todoContainer.addEventListener("click", (e) => {
+            var event = e.target.closest(".remove").parentNode
+            // console.log( event.textContent)
 
-      let arrIndex, ids;
+            let arrIndex;
       
     
 
-      arrIndex = todoArr.findIndex((e) => {
+            arrIndex = todoArr.findIndex((e) => {
                      
-            return JSON.stringify(e.value).includes(JSON.stringify(event.innerText.replace(' \n', '')))
+                  return JSON.stringify(e.value).includes(JSON.stringify(event.innerText.replace(' \n', '')))
             
+            })
+
+
+            todoArr.splice(arrIndex, 1)
+            localStorage.setItem("myTodos" , JSON.stringify(todoArr))
+           
+
+            event.parentNode.removeChild(event)
       })
-
-
-      todoArr.splice(arrIndex, 1)
-
-      event.parentNode.removeChild(event)
-      
-     
-
-})
+}
 
 init = () => {
       
@@ -169,18 +161,14 @@ init = () => {
                                     
                   }
          
-                  elements.input.value = ''
-                            
+                  elements.input.value = ''   
             }
-      
       })
 
       if (todoArr != []) {
         renderOnRefresh()
-            
       }
-
-   
+      removeTodoFromDOM()
 }
 
  init()
