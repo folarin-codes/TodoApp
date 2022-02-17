@@ -84,7 +84,7 @@ class Todo {
 
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${value} <img src="images/icon-cross.svg"</li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span>${value}<img src="images/icon-cross.svg" alt="" srcset="" class="remove"></li>
             
             
             `
@@ -112,7 +112,7 @@ renderOnRefresh = function () {
             
             let todoItem =  ` 
 
-             <li><input type="radio" name="" id=""> <span class="check-box"></span> ${e.value} <img src="images/icon-cross.svg" </li>
+             <li><input type="radio" name="" id=""> <span class="check-box"></span>${e.value}<img src="images/icon-cross.svg" alt="" srcset="" class="remove"> </li>
             
             
             `
@@ -127,8 +127,25 @@ renderOnRefresh = function () {
 }
 
 elements.todoContainer.addEventListener("click", (e) => {
-      let event = e.target;
-      console.log(event)
+      var event = e.target.closest(".remove").parentNode
+      // console.log( event.textContent)
+
+      let arrIndex, ids;
+      
+    
+
+      arrIndex = todoArr.findIndex((e) => {
+                     
+            return JSON.stringify(e.value).includes(JSON.stringify(event.innerText.replace(' \n', '')))
+            
+      })
+
+
+      todoArr.splice(arrIndex, 1)
+
+      event.parentNode.removeChild(event)
+      
+     
 
 })
 
